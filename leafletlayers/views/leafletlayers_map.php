@@ -1,0 +1,1 @@
+<div id="leafmap" style="height:500px;"></div>
