@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: leafletlayers\n"
 "POT-Creation-Date: 2016-02-02 14:14+0100\n"
-"PO-Revision-Date: 2016-02-02 14:15+0100\n"
+"PO-Revision-Date: 2016-02-04 12:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: Erwan Regnier <contact@erwanregnier.fr>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: ../controllers/class-leafletlayers-controller-public.php:116
 #: ../controllers/admin/class-leafletlayers-controller-admin-menu.php:83
 msgid "Insufficent accuracy : please zoom a little more."
-msgstr "Présision insuffisante : merci de zoomer un peu plus."
+msgstr "Présision insuffisante : merci de zoomer un peu plus"
 
 #: ../controllers/class-leafletlayers-controller-public.php:117
 msgid "Thanks you, the marker will be added after moderation"
