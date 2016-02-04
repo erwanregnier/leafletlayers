@@ -1,20 +1,12 @@
-=== LeafletLayers ===
-Contributors: cryonos
-Tags: map,leaflet,leafletjs,marker,poi
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
-License: Creative Commons Attribution-ShareAlike 4.0 International
-License URI: http://creativecommons.org/licenses/by-sa/4.0/legalcode
+# LeafletLayers
+
+LeafletLayers is a leafletjs plugin for Wordpress with markers groups panel and add in front-end option
+
+## Description
 
 LeafletLayers is a leafletjs plugin with markers groups panel and add in front-end option
 
-== Description ==
-
-
-LeafletLayers is a leafletjs plugin with markers groups panel and add in front-end option
-
-== Installation ==
+## Installation
 
 1. Upload `leafletlayers` directory to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
