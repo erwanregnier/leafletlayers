@@ -12,23 +12,23 @@ LeafletLayers is a leafletjs plugin with markers groups panel and add in front-e
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 
-== Usage ==
+## Usage
 
-= Shortcodes =
+### Shortcodes
 
 [leafmap] : show the map with markers by groups
 [leafmapform] : show the add form in front end. Must be used with [leafmap] !
 
-= Settings =
+### Settings
 
 You can activate or not the front-end submission in Settings > LeafletLayers
 
-== Languages ==
+## Languages
 
 You can add you own language using the default PO file in languages folder.
 By default : french and english
 
-== Changelog ==
+## Changelog
 
-= 1.0 =
+1.0
 *First version*
