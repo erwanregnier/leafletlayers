@@ -1,6 +1,7 @@
 # LeafletLayers
 
 LeafletLayers is a leafletjs plugin for Wordpress with markers groups panel and add in front-end option
+No :panda_face: was harmed in the making of this plugin
 
 ## Description
 
