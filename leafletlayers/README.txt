@@ -38,5 +38,8 @@ By default : french and english
 
 == Changelog ==
 
+= 1.0.1 =
+*Adding the bubble info with count of markers waiting for approval in the admin menu*
+
 = 1.0 =
 *First version*
