@@ -59,6 +59,9 @@ if ( ! class_exists( 'LeafletLayers_Model_Admin' ) ) {
 				return self::get_my_group_datas(intval($id));
 		}
 		
+		public function get_moderation_count() {
+			return self::get_waiting_approval();	
+		}
 		/**
 		* Marker validation and save
 		* @since 1.0.0
@@ -232,7 +235,7 @@ if ( ! class_exists( 'LeafletLayers_Model_Admin' ) ) {
 		}
 		
 		/* Get group datas
-		*@param $id array
+		* @param $id array
 		* @since 1.0.0
 		*/
 		
@@ -241,6 +244,19 @@ if ( ! class_exists( 'LeafletLayers_Model_Admin' ) ) {
 			global $wpdb;	
 			$sql = 'SELECT title as group_title, id as group_id FROM '.$wpdb->prefix.'leafletlayers_markers_groups WHERE id ='.$id;
 			$datas = $wpdb->get_row($sql, ARRAY_A);
+			return $datas;	
+		}
+		
+		/* Get count of markers waiting for approval
+		* @return int
+		* @since 1.0.1
+		*/
+		
+		protected static function get_waiting_approval()
+		{
+			global $wpdb;	
+			$sql = 'SELECT COUNT(*) FROM '.$wpdb->prefix.'leafletlayers_markers WHERE moderated =0';
+			$datas = $wpdb->get_var($sql);
 			return $datas;	
 		}
 

@@ -90,15 +90,29 @@ if ( ! class_exists( 'LeafletLayers_Controller_Admin_Menu' ) ) {
 		 */
 		public function plugin_menu() {
 
-			add_menu_page(__('Markers Map', LeafletLayers::PLUGIN_ID), __('Markers Map', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers', array(&$this,'template_listing'),'dashicons-admin-site',6);
+			add_menu_page(__('Markers Map', LeafletLayers::PLUGIN_ID), self::add_moderation_bubble(__('Markers Map', LeafletLayers::PLUGIN_ID)), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers', array(&$this,'template_listing'),'dashicons-admin-site',6);
 			add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Markers list', LeafletLayers::PLUGIN_ID), __('Markers list', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers',array(&$this, 'template_listing' ));
-			add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Markers moderation', LeafletLayers::PLUGIN_ID), __('Markers moderation', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers_moderation',array(&$this, 'template_mod_listing' ));
+			add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Markers moderation', LeafletLayers::PLUGIN_ID), self::add_moderation_bubble(__('Markers moderation', LeafletLayers::PLUGIN_ID)), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers_moderation',array(&$this, 'template_mod_listing' ));
 			add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Markers Groups', LeafletLayers::PLUGIN_ID), __('Markers Groups', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_markers_groups',array(&$this, 'template_groups_listing' ));
 			add_submenu_page( 'Edit group page', __('Edit group', LeafletLayers::PLUGIN_ID), __('Edit group', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_edit_group',array(&$this, 'template_edit_group' ));
 			add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Add group', LeafletLayers::PLUGIN_ID), __('Add a group', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_add_group',array(&$this, 'template_add_group' ));
 			static::$hook_suffix_add=add_submenu_page(LeafletLayers::PLUGIN_ID.'_markers', __('Add marker', LeafletLayers::PLUGIN_ID), __('Add a marker', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_add_marker',array(&$this, 'template_add' ));
 			static::$hook_suffix_edit=add_submenu_page( 'Edit marker page', __('Edit marker', LeafletLayers::PLUGIN_ID), __('Edit marker', LeafletLayers::PLUGIN_ID), 'publish_posts', LeafletLayers::PLUGIN_ID.'_edit_marker',array(&$this, 'template_edit' ));
 		}
+	
+	/**
+	* Adding the number of waiting for approval markers
+	*
+	* @param $text title
+	* @since 1.0.1
+	*/
+	private function add_moderation_bubble($title)
+	{
+		$count= $this->model->get_moderation_count();
+		if($count>0)
+		$title .=sprintf(' <span class="update-plugins"><span class="update-count">%d</span></span>',$count);
+		return $title;
+	}
 		
 	/**
 	* Save and delete functions

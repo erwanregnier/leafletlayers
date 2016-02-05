@@ -1,4 +1,4 @@
-var map = L.map('leafmap').setView([49.89690130311624, 2.305455207824707], 13);
+var map = L.map('leafmap').setView([49.89614867401883, 2.347112596035003], 12);
 L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
