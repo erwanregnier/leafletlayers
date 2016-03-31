@@ -38,6 +38,9 @@ By default : french and english
 
 == Changelog ==
 
+= 1.0.2 =
+*Adding address in the pop-up text on public map*
+
 = 1.0.1 =
 *Adding the bubble info with count of markers waiting for approval in the admin menu*
 
