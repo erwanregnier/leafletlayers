@@ -20,7 +20,7 @@ for (i in markers_grouped) {
 	//Retrieve markers for this layer
 	for(x in markers_grouped[i].markers) {
 		var m_id=markers_grouped[i].markers[x].id;
-		L.marker([markers_grouped[i].markers[x].lat, markers_grouped[i].markers[x].lng]).bindPopup("<b>"+markers_grouped[i].markers[x].title+"</b><br>"+markers_grouped[i].markers[x].desc).addTo(obj2);
+		L.marker([markers_grouped[i].markers[x].lat, markers_grouped[i].markers[x].lng]).bindPopup("<b>"+markers_grouped[i].markers[x].title+"</b><br>"+markers_grouped[i].markers[x].desc+"<br><br>"+markers_grouped[i].markers[x].addr).addTo(obj2);
 	}
 	//Add the layer to control list
 	var ovls = overLayers[0].layers;
